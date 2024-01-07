@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.home-main{
+    width: 100%;
+    height: 100vh;
+    border: 2px solid black;
+    background-color: rgb(10, 10, 10); /* Or your desired hover color */
+    display: flex;
+    position: relative;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.side-wall{
+    width: 40%;
+    height: 100vh;
+    background-color: rgb(130, 21, 255); /* Or your desired hover color */
+    display: flex;
+    position: absolute;
+    transform: rotate(-15deg) scaleY(1.5);
+    top: 0;
+    left: -18%;
+    /* transform: scale(1); */
+    z-index: 1;
+
+}
+
+.home-main-container{
+    display: flex;
+    width: 90%;
+    height: 90%;
+    /* border: 2px solid white; */
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* profile container */
+.profile-container{
+    width: 35%;
+    background-image: url(https://tunis-wp.ibthemespro.com/wp-content/uploads/2023/09/2.jpg);
+    overflow: hidden;
+    margin-right: 5%;
+    height: 94%;
+    border-radius: 30px;
+    position: relative;
+}
+.profile-container img{
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    top: 4%;
+    left: -27%;
+}
+ /* profile detail container */
+ .profile-detail-container{
+    /* border: 2px solid green; */
+    width: 40%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .button-container{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-around; */
+ }
+.detail-header{
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 52px;
+    color: rgb(130, 21, 255); /* Or your desired hover color */
+    /* opacity: 0; */
+
+}
+.detail-header span{
+    color: white;
+}
+.detail-content{
+    margin: 15px 0 28px;
+    font-size: 16px;
+    line-height: 35px;
+    color: white;
+}
+.button-container button{
+    border-radius: 35px;
+    cursor: pointer;
+    user-select: none;
+    transition: 250ms all ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    position: relative;
+    z-index: 1;
+    /* padding: 8px 8px; */
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    outline: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.btns{
+    padding: 15px;
+    border-radius: 30px;
+    margin-left: 3px;
+    background-color: rgb(130, 21, 255);
+}
+
