@@ -1,11 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import "../assets/styles/pageStyles/contact.css"
+import AdminDropdown from '../components/AdminDropdown'
 
 const Contact = () => {
     return (
         <>
             <main className="contact-main">
+                <AdminDropdown/>
                 <Navbar />
                 <div className="contact-main-container">
                     <div className="contact-header-container">

@@ -1,11 +1,13 @@
 import React from 'react'
 import "../assets/styles/pageStyles/about.css"
 import Navbar from '../components/Navbar'
+import AdminDropdown from "../components/AdminDropdown"
 
 const About = () => {
     return (
         <>
             <main className="about-main">
+                <AdminDropdown/>
                 <Navbar />
                 <div className="about-main-container">
                     <div className="about-header-container">
@@ -50,7 +52,7 @@ const About = () => {
                                 </div>
                                 <div className="info-key-value">
                                     <div className="info-key">Phone:</div>
-                                    <div className="info-value">+9834183296</div>
+                                    <div className="info-value">+919834183296</div>
                                 </div>
                                 <div className="info-key-value">
                                     <div className="info-key">Email:</div>
@@ -61,9 +63,7 @@ const About = () => {
                                     <div className="info-value">linkedin.com/in/uday-rana-678879193</div>
                                 </div>
                             </div>
-                            <button type="button" className="download-btn">
-                                Download cv
-                            </button>
+                            <button type="button" className="download-resume-btn"><a href="https://docs.google.com/document/d/1Pd4_w20nrLHMqeaAvx-bMSxZj1dvbg4kr4CU1Pot1s0/edit?usp=drive_link" target='_blank'>Download cv <i class="fa fa-download btns"></i></a></button>
                         </div>
                         <div className="personal-info-right">
                             <div class="count-container">

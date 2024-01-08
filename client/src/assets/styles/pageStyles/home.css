@@ -94,7 +94,6 @@ body{
 .button-container button{
     border-radius: 35px;
     cursor: pointer;
-    user-select: none;
     transition: 250ms all ease-in-out;
     text-transform: uppercase;
     text-decoration: none !important;
@@ -104,12 +103,21 @@ body{
     font-size: 17px;
     font-weight: 600;
     color: #fff;
-    background-color: transparent;
+    background-color: #333;
     outline: none !important;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+    padding: 0 0 0 3px; 
+
+}
+.button-container button:hover{
+    background-color: rgb(130, 21, 255);
+  }
+.download-resume-btn a{
+    text-decoration: none;
+    color: white;
 }
 .btns{
     padding: 15px;

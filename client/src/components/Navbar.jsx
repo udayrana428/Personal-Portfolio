@@ -38,7 +38,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li id="menu-item-264" className="menu-item blog-menu active">
-                            <Link to="/blog" aria-current="page">
+                            <Link to="/" aria-current="page">
                                 <span>Blog</span>
                                 <i className="_mi _before fa fa-weixin" aria-hidden="true"></i>
                             </Link>
