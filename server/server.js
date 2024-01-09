@@ -5,7 +5,7 @@ const app = express();
 
 const authRoutes = require('./routes/authRoutes.js');
 const projectRoutes = require('./routes/projectRoutes.js');
-// const cors=require('cors')
+const cors=require('cors')
 const PORT = process.env.PORT || 3001;
 
 // MongoDB connection
@@ -21,7 +21,7 @@ db.once('open', () => {
 });
 
 // Middleware
-// app.use(cors())
+app.use(cors())
 app.use(express.json());
 
 // Routes

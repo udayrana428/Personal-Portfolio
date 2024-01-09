@@ -2,11 +2,13 @@ import React from 'react'
 import "../assets/styles/pageStyles/about.css"
 import Navbar from '../components/Navbar'
 import AdminDropdown from "../components/AdminDropdown"
+import ToggleNavbar from '../components/ToggleNavbar'
 
 const About = () => {
     return (
         <>
             <main className="about-main">
+                <ToggleNavbar/>
                 <AdminDropdown/>
                 <Navbar />
                 <div className="about-main-container">

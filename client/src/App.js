@@ -8,7 +8,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link
@@ -19,13 +19,13 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admindashboard" element={<AdminDashboard/>} />
-          <Route path="/signup" element={<Signup/>} />
-          <Route path="/login" element={<Login/>} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/works" element={<Works />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/admindashboard" element={<AdminDashboard/>} />
+          <Route exact path="/signup" element={<Signup/>} />
+          <Route exact path="/login" element={<Login/>} />
         </Routes>
       </Router>
     </>

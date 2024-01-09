@@ -3,12 +3,14 @@ import "../assets/styles/pageStyles/login.css"
 import AdminDropdown from '../components/AdminDropdown'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
+import ToggleNavbar from '../components/ToggleNavbar'
 
 
 const Login = () => {
     return (
         <>
             <main className="login-main">
+                <ToggleNavbar/>
                 <AdminDropdown />
                 <Navbar />
                 <div className="login-main-container">

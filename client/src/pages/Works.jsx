@@ -3,6 +3,7 @@ import "../assets/styles/pageStyles/works.css"
 import Navbar from '../components/Navbar'
 import { useState } from 'react'
 import AdminDropdown from '../components/AdminDropdown'
+import ToggleNavbar from '../components/ToggleNavbar'
 
 const Works = () => {
     const [sideTransition, setSideTransition] = useState(null);
@@ -34,6 +35,7 @@ const Works = () => {
     return (
         <>
             <main className="works-main">
+                <ToggleNavbar/>
                 <AdminDropdown/>
                 <Navbar />
                 <div className="works-main-container">

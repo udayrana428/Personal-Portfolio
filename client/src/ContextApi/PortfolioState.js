@@ -35,8 +35,13 @@ const PortfolioState = (props) => {
 
     const fetchProjects = async () => {
         try {
-          const response = await axios.get('http://localhost:3001/projects');
+          const response = await axios.get('https://alert-deer-beret.cyclic.app/projects/fetchAllProjects');
+          console.log("fetched data")
+          console.log("setting projects")
+          // console.log(response)
           setProjects(response.data);
+          // console.log(projects)
+
         } catch (error) {
           console.error('Error fetching projects:', error.response ? error.response.data : error.message);
         }
@@ -73,7 +78,7 @@ const PortfolioState = (props) => {
       };
 
     return (
-        <GlobalContext.Provider value={{ selectedProject,setSelectedProject,setShowCreateModal, setShowDeleteModal, setShowUpdateModal,showCreateModal, showDeleteModal, showUpdateModal ,openCreateModal, openDeleteModal, openUpdateModal, handleCreateProject, fetchProjects
+        <GlobalContext.Provider value={{ selectedProject,setSelectedProject,setShowCreateModal, setShowDeleteModal, setShowUpdateModal,showCreateModal, showDeleteModal, showUpdateModal ,openCreateModal, openDeleteModal, openUpdateModal, handleCreateProject, fetchProjects, projects, setProjects
         }}>
             {props.children}
         </GlobalContext.Provider>

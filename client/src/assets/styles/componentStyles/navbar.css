@@ -75,3 +75,10 @@ a span{
     opacity: 1; /* Show the span on hover */
     
   }
+
+  /* Responsive */
+  @media screen and (max-width: 700px) {
+    .header-container{
+        display: none;
+    }
+  }

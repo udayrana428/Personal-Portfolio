@@ -3,12 +3,14 @@ import "../assets/styles/pageStyles/signup.css"
 import AdminDropdown from '../components/AdminDropdown'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
+import ToggleNavbar from '../components/ToggleNavbar'
 
 const Signup = () => {
     return (
         <>
             <main className="signup-main">
-            <AdminDropdown />
+                <ToggleNavbar />
+                <AdminDropdown />
                 <Navbar />
                 <div className="signup-main-container">
                     <section className="container forms">

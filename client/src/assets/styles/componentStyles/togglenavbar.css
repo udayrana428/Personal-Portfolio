@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.togglenavbar-container{
+    /* display: flex; */
+    position:absolute;
+    z-index: 3;
+    top: 3vh;
+    left: 3vw;
+    /* width: 13%; */
+    /* height: 50%; */
+    /* border: 2px solid white; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: transparent;
+    display: none;
+}
+.togglenavbar-container Button{
+    background-color: transparent;
+    border: none;
+}
+.togglenavbar-container .fa-bars{
+    background-color: rgb(58, 58, 58);
+    padding: 1rem;
+}
+.menu-list-container{
+    
+}
+
+/* Resonsive */
+@media screen and (max-width:700px) {
+    .togglenavbar-container{
+        display: inline;
+    }
+}

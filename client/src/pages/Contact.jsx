@@ -2,11 +2,13 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import "../assets/styles/pageStyles/contact.css"
 import AdminDropdown from '../components/AdminDropdown'
+import ToggleNavbar from '../components/ToggleNavbar'
 
 const Contact = () => {
     return (
         <>
             <main className="contact-main">
+                <ToggleNavbar/>
                 <AdminDropdown/>
                 <Navbar />
                 <div className="contact-main-container">
