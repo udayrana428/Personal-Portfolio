@@ -15,26 +15,25 @@ const ToggleNavbar = () => {
         <>
             <div className="togglenavbar-container">
                 <Button variant="primary" onClick={handleShow}>
-                    <i class="fa fa-bars"></i>
+                    <i className="fa fa-bars"></i>
                 </Button>
 
-                <Offcanvas show={show} onHide={handleClose}>
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                <Offcanvas className="to-nav-offcanvas" show={show} onHide={handleClose}>
+                    <Offcanvas.Header className='close-btn' closeButton>
+                        <Offcanvas.Title>Portfolio</Offcanvas.Title>
                     </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        <Dropdown.ItemText></Dropdown.ItemText>
+                    <Offcanvas.Body className='offcanvas-body'>
                         <Link to='/'>
-                            <Dropdown.Item as="button">Home</Dropdown.Item>
+                            Home
                         </Link>
                         <Link to='/about'>
-                            <Dropdown.Item as="button">About</Dropdown.Item>
+                            About
                         </Link>
                         <Link to='/works'>
-                            <Dropdown.Item as="button">Works</Dropdown.Item>
+                            Works
                         </Link>
                         <Link to='/contact'>
-                            <Dropdown.Item as="button">Contact</Dropdown.Item>
+                            Contact
                         </Link>
                     </Offcanvas.Body>
                 </Offcanvas>

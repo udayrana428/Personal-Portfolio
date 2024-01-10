@@ -159,7 +159,8 @@ const About = () => {
                         </div>
                     </section>
                     <hr className="dash-line" />
-                    <div className="exp-edu-head sub-heading">Experience & Education</div>
+                    <div className="exp-edu-head sub-heading desk-head">Experience & Education</div>
+                    <div className="exp-edu-head sub-heading resp-extra">Experience</div>
                     <section className="exp-edu-container">
                         <div className="exp-container">
                             <div className="exp-box">
@@ -190,6 +191,7 @@ const About = () => {
                                 <p className="job-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, necessitatibus!</p>
                             </div>
                         </div>
+                        <div className="exp-edu-head sub-heading resp-extra">Education</div>
                         <div className="edu-container">
                             <div className="edu-box">
                                 <i class="fa fa-graduation-cap edu-exp-logo"></i>

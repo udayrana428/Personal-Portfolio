@@ -7,28 +7,18 @@ import AdminDropdown from '../components/AdminDropdown';
 import MyContext from '../ContextApi/globalContext';
 import CreateProjectModal from '../components/Modals/CreateProjectModal';
 import ToggleNavbar from '../components/ToggleNavbar';
+import AdminProjectCardsContainer from '../components/AdminProjectCardsContainer';
 
 
 const DashboardPage = () => {
 
-  const { selectedProject, setSelectedProject, setShowCreateModal, setShowDeleteModal, setShowUpdateModal, showCreateModal, showDeleteModal, showUpdateModal, fetchProjects, openCreateModal, projects } = useContext(MyContext)
-  const [allProjects, setallProjects] = useState(null)
+  const { selectedProject, setSelectedProject, setShowCreateModal, setShowDeleteModal, setShowUpdateModal, showCreateModal, showDeleteModal, showUpdateModal, fetchProjects, openCreateModal, projects, } = useContext(MyContext)
 
 
   // Fetch projects on component mount
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await fetchProjects();
-        setallProjects(projects); // Assuming response.data is an array
-        console.log(allProjects)
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      }
-    };
-
-    fetchData();
-  }, [allProjects]);
+    
+  }, []);
 
 
   // console.log(projects)
@@ -51,24 +41,12 @@ const DashboardPage = () => {
           </div>
           <button type="button" className='create-project-btn' onClick={() => openCreateModal()}>
             New Project
-            <i class="fa fa-plus"></i>
+            <i className="fa fa-plus"></i>
           </button>
 
 
           <div className="projects-container">
-            {allProjects && allProjects.map((e) => {
-              console.log("i am uday")
-              return <AdminProjectCard key={e.id} />;
-            })}
-
-            {/* <AdminProjectCard />
-            <AdminProjectCard />
-            <AdminProjectCard />
-            <AdminProjectCard />
-            <AdminProjectCard />
-            <AdminProjectCard />
-            <AdminProjectCard />
-            <AdminProjectCard /> */}
+            <AdminProjectCardsContainer/>
           </div>
 
           {showCreateModal && (

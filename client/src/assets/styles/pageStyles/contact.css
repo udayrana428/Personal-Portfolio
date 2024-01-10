@@ -173,7 +173,6 @@ body {
 .contact-form button{
     border-radius: 35px;
     cursor: pointer;
-    user-select: none;
     transition: 250ms all ease-in-out;
     text-transform: uppercase;
     text-decoration: none !important;
@@ -183,11 +182,13 @@ body {
     font-size: 17px;
     font-weight: 600;
     color: #fff;
-    background-color: transparent;
+    background-color: #333;
     outline: none !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
+    padding: 0 0 0 3px; 
 }
 .fa-paper-plane{
     /* font-size: 20px; */
@@ -195,4 +196,24 @@ body {
     border-radius: 30px;
     margin-left: 3px;
     background-color: rgb(130, 21, 255);
+}
+.contact-form button:hover{
+    background-color: rgb(130, 21, 255);
+  }
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-info-container{
+        width: 100%;
+        padding: 1rem
+    }
+    .contact-form-container{
+        width: 115%;
+    }
+    .mail-container{
+        height: 20% ;
+    }
 }

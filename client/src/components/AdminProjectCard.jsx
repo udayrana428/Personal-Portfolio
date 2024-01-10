@@ -4,14 +4,16 @@ import Card from 'react-bootstrap/Card';
 import MyContext from '../ContextApi/globalContext';
 
 
-const AdminProjectCard = () => {
+const AdminProjectCard = (props) => {
     const {openCreateModal}=useContext(MyContext)
+    const {title}=props
     return (
         <>
+        
             <Card className='admin-project-card'>
                 <Card.Img variant="top" src="https://tunis-wp.ibthemespro.com/wp-content/uploads/2023/09/project-2.jpg" style={{width: "100%"}}/>
                 <Card.Body>
-                    <Card.Title className='admin-card-title'>Card Title</Card.Title>
+                    <Card.Title className='admin-card-title'>{title}</Card.Title>
                     <div className="buttons-container">
                         <i className="fa fa-eye" onClick={()=>openCreateModal()}></i>
                         <i className="fa fa-pen"></i>

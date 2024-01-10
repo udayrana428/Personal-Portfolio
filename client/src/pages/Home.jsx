@@ -1,11 +1,26 @@
-import React,{useEffect, useRef, useState} from 'react'
+import React,{useEffect, useRef, useState, useContext} from 'react'
 import "../assets/styles/pageStyles/home.css"
 import Navbar from "../components/Navbar"
 import AdminDropdown from '../components/AdminDropdown';
 import ToggleNavbar from '../components/ToggleNavbar';
+import MyContext from '../ContextApi/globalContext';
+import Profile from "../assets/images/profile3.png"
+
 
 
 const Home = () => {
+    const { selectedProject, setSelectedProject, setShowCreateModal, setShowDeleteModal, setShowUpdateModal, showCreateModal, showDeleteModal, showUpdateModal, fetchProjects, openCreateModal, projects, } = useContext(MyContext)
+    useEffect(()=>{
+        const fetchData = async () => {
+            try {
+              await fetchProjects();
+            } catch (error) {
+              console.error("Error fetching projects:", error);
+            }
+          };
+      
+          fetchData();
+    },[])
     return (
         <>
             <main className="home-main">
@@ -15,7 +30,7 @@ const Home = () => {
                 <div className="side-wall"></div>
                 <div className="home-main-container">
                     <div className="profile-container">
-                        <img src="https://tunis-wp.ibthemespro.com/wp-content/uploads/2023/09/img-mobile.jpg" alt="" srcSet="" />
+                        <img src={Profile} alt="eergfeger" srcSet="" />
                     </div>
                     <div className="profile-detail-container">
                         <div className="detail-header" >I'M UDAY RANA.<br/>

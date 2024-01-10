@@ -5,7 +5,6 @@ import axios from 'axios';
 
 
 const PortfolioState = (props) => {
-    const [value, newValue] = useState("uday")
 
 
     // For Modals
@@ -15,6 +14,7 @@ const PortfolioState = (props) => {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showUpdateModal, setShowUpdateModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [yourAccessToken, setyourAccessToken] = useState('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTliMDExNjEzYjE4YTEwYjg4NWZmOGIiLCJpYXQiOjE3MDQ2NjE4MDN9._Qoy5EiqJ3SrRGoLy7ChqVla6AMcuY5aB8ZxlitvkJc')
 
     // All Functions
     const openCreateModal = () => {
@@ -35,7 +35,7 @@ const PortfolioState = (props) => {
 
     const fetchProjects = async () => {
         try {
-          const response = await axios.get('https://alert-deer-beret.cyclic.app/projects/fetchAllProjects');
+          const response = await axios.get('https://silly-moccasins-dove.cyclic.app/projects/fetchAllProjects');
           console.log("fetched data")
           console.log("setting projects")
           // console.log(response)
@@ -44,16 +44,6 @@ const PortfolioState = (props) => {
 
         } catch (error) {
           console.error('Error fetching projects:', error.response ? error.response.data : error.message);
-        }
-      };
-
-    const handleCreateProject = async (newProjectData) => {
-        try {
-          await axios.post('http://localhost:3001/projects', newProjectData);
-          fetchProjects();
-          setShowCreateModal(false);
-        } catch (error) {
-          console.error('Error creating project:', error.response ? error.response.data : error.message);
         }
       };
     
@@ -78,7 +68,7 @@ const PortfolioState = (props) => {
       };
 
     return (
-        <GlobalContext.Provider value={{ selectedProject,setSelectedProject,setShowCreateModal, setShowDeleteModal, setShowUpdateModal,showCreateModal, showDeleteModal, showUpdateModal ,openCreateModal, openDeleteModal, openUpdateModal, handleCreateProject, fetchProjects, projects, setProjects
+        <GlobalContext.Provider value={{ selectedProject,setSelectedProject,setShowCreateModal, setShowDeleteModal, setShowUpdateModal,showCreateModal, showDeleteModal, showUpdateModal ,openCreateModal, openDeleteModal, openUpdateModal, fetchProjects, projects, setProjects, yourAccessToken
         }}>
             {props.children}
         </GlobalContext.Provider>
