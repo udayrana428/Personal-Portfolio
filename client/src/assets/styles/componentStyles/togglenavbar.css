@@ -8,7 +8,7 @@ body{
 }
 .togglenavbar-container{
     /* display: flex; */
-    position:absolute;
+    position:fixed;
     z-index: 3;
     top: 3vh;
     left: 3vw;
@@ -27,6 +27,14 @@ body{
     background-color: transparent;
     border: none;
 }
+.animate-btn{
+    transform: rotate(90deg);
+    transition: transform .3s ease-in;
+}
+.togglenavbar-container .fa-bars:hover{
+    transform: rotate(90deg);
+    transition: transform .3s ease-in;
+}
 .togglenavbar-container .fa-bars{
     background-color: rgb(58, 58, 58);
     padding: 1rem;
@@ -38,6 +46,7 @@ body{
     background-color: rgb(58, 58, 58);
     width: 60%;
     color: white;
+    /* z-index: 5; */
 }
 .to-nav-offcanvas .offcanvas-body{
     display: flex;
@@ -62,13 +71,16 @@ body{
 }
 
 /* Resonsive */
-@media screen and (max-width:700px) {
+
+@media screen and (max-width: 576px) {
     .togglenavbar-container{
         display: inline;
     }
-}
-@media screen and (max-width: 480px) {
     div.to-nav-offcanvas.offcanvas.offcanvas-start.show{
-        width: 60%;
+        /* width: 60%; */
+    }
+    .offcanvas-header{
+        margin-top: 1em;
+        justify-content: end;
     }
 }

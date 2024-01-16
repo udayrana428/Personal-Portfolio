@@ -37,7 +37,7 @@ const CreateProjectModal = () => {
             });
 
             // Assuming fetchProjects is a function that updates your project data
-            fetchProjects();
+            await fetchProjects();
             setShowCreateModal(false);
 
             console.log('Project created successfully:', response.data);
@@ -100,10 +100,10 @@ const CreateProjectModal = () => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowCreateModal(false)}>
+                    <Button variant="secondary" className='cancel-btn' onClick={() => setShowCreateModal(false)}>
                         Cancel
                     </Button>
-                    <Button variant="primary" onClick={handleCreateProject}>
+                    <Button variant="primary" className='add-btn' onClick={handleCreateProject}>
                         Add
                     </Button>
                 </Modal.Footer>

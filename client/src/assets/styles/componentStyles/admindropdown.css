@@ -34,12 +34,25 @@ body {
 #dropdown-item-button {
     text-decoration: none;
 }
+.dropdown-menu{
+    background-color: rgb(58, 58, 58);
+    /* text-align: center; */
+}
+.dropdown-item-text{
+    color: white;
+}
+.dropdown-menu a button{
+    color: white;
+}
+.dropdown-menu span{
+    text-align: center;
+}
 
 
 /* Responsive */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 576px) {
     .admindropdown-container {
-        top: 2vh;
-        left: 81vw;
+        top: 5vh;
+        left: 82vw
     }
 }

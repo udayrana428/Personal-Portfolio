@@ -13,6 +13,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import ProjectPage from './pages/ProjectPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/admindashboard" element={<AdminDashboard/>} />
           <Route exact path="/signup" element={<Signup/>} />
           <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/projectpage" element={<ProjectPage/>} />
         </Routes>
       </Router>
     </>

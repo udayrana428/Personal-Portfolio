@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "../assets/styles/componentStyles/togglenavbar.css"
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
+import MyContext from '../ContextApi/globalContext';
+import Loader from './Loader';
 
 
 const ToggleNavbar = () => {
+    const {showLoader, setshowLoader}=useContext(MyContext)
     const [show, setShow] = useState(false);
+    const navigate=useNavigate()
+
+    const location=useLocation()
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -19,20 +25,49 @@ const ToggleNavbar = () => {
                 </Button>
 
                 <Offcanvas className="to-nav-offcanvas" show={show} onHide={handleClose}>
+                    {showLoader && <Loader/>}
                     <Offcanvas.Header className='close-btn' closeButton>
-                        <Offcanvas.Title>Portfolio</Offcanvas.Title>
+                        {/* <Offcanvas.Title>Portfolio</Offcanvas.Title> */}
                     </Offcanvas.Header>
                     <Offcanvas.Body className='offcanvas-body'>
-                        <Link to='/'>
+                        <Link onClick={()=>{
+                            if(location.pathname!=='/'){
+                                setshowLoader(true)
+                            }
+                            setTimeout(() => {
+                                navigate('/')
+                            }, 500);
+                        }} >
                             Home
                         </Link>
-                        <Link to='/about'>
+                        <Link onClick={()=>{
+                            if(location.pathname!=='/about'){
+                                setshowLoader(true)
+                            }
+                            setTimeout(() => {
+                                navigate('/about')
+                            }, 500);
+                        }}>
                             About
                         </Link>
-                        <Link to='/works'>
+                        <Link onClick={()=>{
+                            if(location.pathname!=='/works'){
+                                setshowLoader(true)
+                            }
+                            setTimeout(() => {
+                                navigate('/works')
+                            }, 500);
+                        }}>
                             Works
                         </Link>
-                        <Link to='/contact'>
+                        <Link onClick={()=>{
+                            if(location.pathname!=='/contact'){
+                                setshowLoader(true)
+                            }
+                            setTimeout(() => {
+                                navigate('/contact')
+                            }, 500);
+                        }}>
                             Contact
                         </Link>
                     </Offcanvas.Body>

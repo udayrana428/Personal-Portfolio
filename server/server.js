@@ -21,15 +21,16 @@ db.once('open', () => {
 });
 
 // Middleware
-app.use(cors({
-  origin: [
-    'http://localhost:3000', // Replace with your first origin
-    'https://udayrana428.github.io/Personal_Portfolio/',    // Replace with your second origin
-    // Add more origins as needed
-  ],
-  methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-  allowedHeaders: 'Content-Type, Authorization',
-}));
+app.use(cors())
+// app.use(cors({
+//   origin: [
+//     'http://localhost:3000', // Replace with your first origin
+//     'https://udayrana428.github.io/Personal_Portfolio/',    // Replace with your second origin
+//     // Add more origins as needed
+//   ],
+//   methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+//   allowedHeaders: 'Content-Type, Authorization',
+// }));
 app.use(express.json());
 
 // Routes

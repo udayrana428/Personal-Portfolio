@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import "../assets/styles/pageStyles/about.css"
 import Navbar from '../components/Navbar'
 import AdminDropdown from "../components/AdminDropdown"
 import ToggleNavbar from '../components/ToggleNavbar'
+import AnimationWallDown from '../components/AnimationWallDown'
+import Loader from '../components/Loader'
+import MyContext from '../ContextApi/globalContext';
+import FileDownloadButton from '../components/FileDownloadButton'
+
 
 const About = () => {
+    const { fetchProjects, showLoader, setshowLoader } = useContext(MyContext)
+    const [showAnimationWall, setshowAnimationWall] = useState(false)
+
+    useEffect(() => {
+        setshowLoader(false)
+        setshowAnimationWall(true)
+    }, [])
     return (
         <>
             <main className="about-main">
-                <ToggleNavbar/>
-                <AdminDropdown/>
+            {showLoader && <Loader/>}
+                <AnimationWallDown showAnimationWall={showAnimationWall} setshowAnimationWall={setshowAnimationWall} />
+                <ToggleNavbar />
+                <AdminDropdown />
                 <Navbar />
                 <div className="about-main-container">
                     <div className="about-header-container">
@@ -65,7 +79,7 @@ const About = () => {
                                     <div className="info-value">linkedin.com/in/uday-rana-678879193</div>
                                 </div>
                             </div>
-                            <button type="button" className="download-resume-btn"><a href="https://docs.google.com/document/d/1Pd4_w20nrLHMqeaAvx-bMSxZj1dvbg4kr4CU1Pot1s0/edit?usp=drive_link" target='_blank'>Download cv <i class="fa fa-download btns"></i></a></button>
+                            <FileDownloadButton/>
                         </div>
                         <div className="personal-info-right">
                             <div class="count-container">
@@ -91,70 +105,72 @@ const About = () => {
                         </div>
                     </section>
                     <hr className="dash-line" />
-                    <div className="skills-head sub-heading">My Skills</div>
                     <section className="skills-container">
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
+                        <div className="skills-head sub-heading">My Skills</div>
+                        <div className="skill-boxes">
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                            <div className="skill-name">
-                                HTML
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                            <div className="skill-name">
-                                HTML
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                            <div className="skill-name">
-                                HTML
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
-                            <div className="skill-name">
-                                HTML
-                            </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
-                            </div>
-                            <div className="skill-name">
-                                HTML
-                            </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
-                            </div>
-                            <div className="skill-name">
-                                HTML
-                            </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
-                            </div>
-                            <div className="skill-name">
-                                HTML
-                            </div>
-                        </div>
-                        <div className="skill-box">
-                            <div class="radialProgressBar progress-10">
-                                <div class="overlay">10</div>
-                            </div>
-                            <div className="skill-name">
-                                HTML
+                            <div className="skill-box">
+                                <div class="radialProgressBar progress-10">
+                                    <div class="overlay">10</div>
+                                </div>
+                                <div className="skill-name">
+                                    HTML
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -220,7 +236,7 @@ const About = () => {
                                 <div className="course">MCA -<span className="college"> RCOEM</span></div>
                                 <p className="edu-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, necessitatibus!</p>
                             </div>
-                            
+
                         </div>
                     </section>
 

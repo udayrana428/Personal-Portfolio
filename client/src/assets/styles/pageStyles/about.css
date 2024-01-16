@@ -24,6 +24,7 @@ body {
     font-size: 30px;
     font-weight: 600;
 }
+
 .edu-exp-logo {
     position: absolute;
     font-size: 20px;
@@ -142,7 +143,7 @@ body {
     font-size: medium;
 }
 
-.download-resume-btn{
+.download-resume-btn {
     border-radius: 35px;
     cursor: pointer;
     transition: 250ms all ease-in-out;
@@ -160,9 +161,10 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 10px;
-    padding: 0 0 0 3px; 
+    padding: 0 0 0 3px;
 }
-.download-resume-btn:hover{
+
+.download-resume-btn:hover {
     background-color: rgb(130, 21, 255);
 
 }
@@ -210,12 +212,22 @@ body {
 
 .skills-container {
     width: 100%;
-    height: 100vh;
+    /* height: 100%; */
     /* border: 2px solid red; */
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    /* flex-wrap: wrap; */
     padding: 2% 2%;
+}
+
+.skill-boxes {
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .skill-box {
@@ -264,7 +276,8 @@ body {
     justify-content: center;
     align-items: center;
 }
-.resp-extra{
+
+.resp-extra {
     display: none;
 }
 
@@ -354,49 +367,106 @@ body {
 }
 
 /* Responsive */
-@media screen and (max-width: 700px) {
-    .personal-info-container{
-        flex-direction: column;
-        width: 100%;
-    height: 70%;
-    }
-    
-}
 
-@media screen and (max-width:450px) {
-    .personal-info-container{
-        height: 90%;
+@media screen and (max-width:576px) {
+    .about-main {
+        height: 100%;
     }
-    .personal-info-left{
-        width: 95%;
-    height: 65%;
+
+    .about-header-container {
+        padding: 5% 0;
+        margin-top: 4rem;
     }
-    .info-key-value{
+
+    .about-main-container {
+        height: 100%;
+    }
+
+    .personal-info-container {
         flex-direction: column;
+        height: 32em;
     }
-    .personal-info-right{
+
+    .transp-sec {
+        font-size: 57px;
+    }
+
+    .head {
+        font-size: 30px;
+    }
+
+    .personal-info-left {
+        width: 95%;
+        height: 100%;
+    }
+
+    .info-key-value {
+        flex-direction: column;
+        margin: 2% 0%;
+    }
+
+    .personal-info-right {
         width: 100%;
-        margin-top: 1rem;
-    }
-    .dash-line{
+        height: 100%;
         margin-top: 2rem;
     }
-    .exp-edu-container{
+
+    .count-container {
+        padding: 5px 10px;
+    }
+
+    .skill-box {
+        margin: 0;
+    }
+
+    .skills-container {
+        margin-top: 20em;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+
+    .dash-line {
+        margin-top: 2rem;
+    }
+
+    .sub-heading {
+        font-size: 25px;
+    }
+
+    .exp-edu-container {
         flex-direction: column;
     }
-    .exp-container{
+
+    .exp-container {
         width: 100%;
     }
-    .edu-container{
+
+    .edu-container {
         width: 100%;
     }
-    .about-header-container{
+
+    .about-header-container {
         padding: 10% 0;
+        margin-top: 2rem;
     }
-    .desk-head{
+
+    .transp-sec {
+        font-size: 55px;
+        opacity: .5;
+        font-weight: 800;
+        z-index: 1;
+    }
+
+    .head {
+        font-size: 30px;
+    }
+
+    .desk-head {
         display: none;
     }
-    .resp-extra{
+
+    .resp-extra {
         display: inline;
     }
 }

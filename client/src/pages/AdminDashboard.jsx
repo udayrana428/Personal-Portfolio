@@ -1,5 +1,5 @@
 // DashboardPage.js
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useNavigate } from 'react';
 import "../assets/styles/pageStyles/admindashboard.css"
 import Navbar from '../components/Navbar';
 import AdminProjectCard from '../components/AdminProjectCard';
@@ -8,16 +8,35 @@ import MyContext from '../ContextApi/globalContext';
 import CreateProjectModal from '../components/Modals/CreateProjectModal';
 import ToggleNavbar from '../components/ToggleNavbar';
 import AdminProjectCardsContainer from '../components/AdminProjectCardsContainer';
+import AnimationWallDown from '../components/AnimationWallDown'
+import Loader from '../components/Loader';
+import DeleteProjectModal from '../components/Modals/DeleteProjectModal';
+import UpdateProjectModal from '../components/Modals/UpdateProjectModal';
+
+
 
 
 const DashboardPage = () => {
 
-  const { selectedProject, setSelectedProject, setShowCreateModal, setShowDeleteModal, setShowUpdateModal, showCreateModal, showDeleteModal, showUpdateModal, fetchProjects, openCreateModal, projects, } = useContext(MyContext)
+  const { setShowCreateModal, showCreateModal, showDeleteModal, setShowDeleteModal, showUpdateModal, setShowUpdateModal, openCreateModal, projects, showLoader, setshowLoader, fetchProjects, yourAccessToken } = useContext(MyContext)
 
+  const [showAnimationWall, setshowAnimationWall] = useState(false)
 
   // Fetch projects on component mount
   useEffect(() => {
-    
+
+    const fetchData = async () => {
+      try {
+        await fetchProjects();
+        setshowLoader(false)
+        setshowAnimationWall(true)
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchData();
+
   }, []);
 
 
@@ -25,48 +44,47 @@ const DashboardPage = () => {
 
   return (
     <>
-      {console.log(projects)}
-      <div className="admin-main">
-        <ToggleNavbar/>
-        <AdminDropdown />
-        <Navbar />
-        <div className="admin-main-container">
-          <div className="admin-header-container">
-            <div className="transp-sec">
-              DASHBOARD
+      {yourAccessToken &&
+        <div className="admin-main">
+          {showLoader && <Loader />}
+
+          <AnimationWallDown showAnimationWall={showAnimationWall} setshowAnimationWall={setshowAnimationWall} />
+          <ToggleNavbar />
+          <AdminDropdown />
+          <Navbar />
+          <div className="admin-main-container">
+            <div className="admin-header-container">
+              <div className="transp-sec">
+                DASHBOARD
+              </div>
+              <div className="head">
+                AD<span>MIN</span>
+              </div>
             </div>
-            <div className="head">
-              AD<span>MIN</span>
+            <button type="button" className='create-project-btn' onClick={() => openCreateModal()}>
+              New Project
+              <i className="fa fa-plus"></i>
+            </button>
+
+
+            <div className="projects-container">
+              <AdminProjectCardsContainer />
             </div>
+
+            {showCreateModal && (
+              <CreateProjectModal onClose={() => setShowCreateModal(false)} />
+            )}
+
+            {showUpdateModal && (
+              <UpdateProjectModal onClose={() => setShowUpdateModal(false)} />
+            )}
+
+            {showDeleteModal && (
+              <DeleteProjectModal onClose={() => setShowDeleteModal(false)} />
+            )}
           </div>
-          <button type="button" className='create-project-btn' onClick={() => openCreateModal()}>
-            New Project
-            <i className="fa fa-plus"></i>
-          </button>
-
-
-          <div className="projects-container">
-            <AdminProjectCardsContainer/>
-          </div>
-
-          {showCreateModal && (
-            <CreateProjectModal onClose={() => setShowCreateModal(false)} />
-          )}
-
-          {/* {showUpdateModal && (
-            <Modal onClose={() => setShowUpdateModal(false)}>
-            </Modal>
-          )}
-
-          {showDeleteModal && (
-            <Modal onClose={() => setShowDeleteModal(false)}>
-              <p>Are you sure you want to delete the project?</p>
-              <button onClick={handleDeleteProject}>Yes</button>
-              <button onClick={() => setShowDeleteModal(false)}>No</button>
-            </Modal>
-          )} */}
         </div>
-      </div>
+      }
     </>
   );
 };

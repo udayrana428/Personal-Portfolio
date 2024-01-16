@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import "../assets/styles/pageStyles/signup.css"
 import AdminDropdown from '../components/AdminDropdown'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import ToggleNavbar from '../components/ToggleNavbar'
+import Loader from '../components/Loader';
+import MyContext from '../ContextApi/globalContext'
 
 const Signup = () => {
+    const { showLoader, setshowLoader } = useContext(MyContext)
+
+    useEffect(() => {
+        setshowLoader(false)
+    }, [])
     return (
         <>
             <main className="signup-main">

@@ -216,3 +216,22 @@ button:hover {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .admin-header-container{
+    margin-top: 3em;
+  }
+  .transp-sec{
+    display: none;
+  }
+  .admin-project-card{
+    width: 19rem;
+  }
+  .create-project-btn{
+    width:28%;
+    padding: 4px;
+    top: 90%;
+    left: 69%;
+    z-index: 3;
+  }
+}
